@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autogestión</title>
+    <link rel="shortcut icon" href="./Assets/Img/Logo.jfif">
+        <!--Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!--Toastify-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a href="./index.html"><img class="img-fluid m-3" src="./Assets/Img/Logo.jfif" width="100" alt="Logo Instituto"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>            
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">           
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nivel secundario</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#listaEstudiantes">Lista de estudiantes</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#registroCalificaciones">Registrar calificaciones</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex m-3">
+              <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search">              
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="text-center">
+            <h2>Registro de calificaciones</h2>         
+            <p>En la siguiente sección podrás agregar estudiantes y notas registradas en la primera etapa. Obtendrás el promedio de cada uno al finalizar la carga de datos</p>      
+        </div> 
+       
+        <div class="row">
+            <form id="formulario">
+                <div class="m-3">
+                    <label>Indica nombre y apellido del estudiante</label>
+                    <input class="form-control" type="text" placeholder="Ej.: Sabrina Canale" aria-label="Disabled input example"  id="nombreEstudiante" name="nombre">  
+                </div>               
+                <div class="m-3">
+                    <label>Ingresa la primera nota</label>
+                    <input class="form-control" type="number" placeholder="Ej.: 6" aria-label="Disabled input example" id="inputNota1" title="No dejar este campo vacío" name="nota1">       
+                </div>
+                <div class="m-3">
+                    <label>Ingresa la segunda nota</label>
+                    <input class="form-control" type="number" placeholder="Ej.: 6" aria-label="Disabled input example"  id="inputNota2" name="nota2">       
+                </div>
+                <div class="m-3">
+                    <label>Ingresa la tercera nota</label>
+                    <input class="form-control" type="number" placeholder="Ej.: 6" aria-label="Disabled input example"  id="inputNota3" name="nota3">       
+                </div>
+                <div class="text-center m-3">
+                    <button type="submit" class="btn btn-dark" id="mostrarAlert">Registrar</button>
+                </div>
+            </form>
+
+        </div>        
+        <div class="row m-3">
+            <div class="text-center">
+                <h3 class="m-3" id="listaEstudiantes">Lista de estudiantes</h3>
+            </div>
+            <table id="tablaProductos" class="table table-success table-striped-columns" name="tabla">
+                <thead class="table-dark">
+                    <tr class="text-center ">
+                        <th scope="col">Estudiante</th>
+                        <th scope="col">Nota 1</th>  
+                        <th scope="col">Nota 2</th>                     
+                        <th scope="col">Nota 3</th>   
+                        <th scope="col">Promedio</th>
+                        <th scope="col">Resultado final</th>                                   
+                    </tr>
+                </thead>  
+            <tbody></tbody>
+            </table>
+            <div class="text-center m-3">
+                <input type="submit"  class="text-center btn btn-secondary" id="enviarLista" value="Enviar lista" >
+            </div>
+        </div>     
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    </div>
+
+    <!--Script Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!--Script Sweet alert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--Toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!--Luxon-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.0.1/build/global/luxon.min.js"></script>
+    <!--Script-->
+    <script src="./index.js"></script>    
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
