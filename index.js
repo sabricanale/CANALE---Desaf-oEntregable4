@@ -51,7 +51,7 @@ function enviarCorreoConLista() {
     }).done(function() {
         Swal.fire({title: `La lista fue enviada a su correo`})
     }).fail(function(error) {
-        alert('Oops... ' + JSON.stringify(error));
+        alert('Error' + JSON.stringify(error));
     });
 }
 
